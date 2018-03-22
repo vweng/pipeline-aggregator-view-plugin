@@ -16,7 +16,8 @@
             <!-- Mission Control -->
             <link href="${app.rootUrl}plugin/pipeline-aggregator-view/css/pipeline-aggregator.css" type="text/css" rel="stylesheet" />
             <style>
-                body, th, td, button.btn { font-size: ${it.fontSize}px; }
+                body, td, button.btn { font-size: ${it.fontSize}px; }
+                th { font-size: ${it.fontSize+2}px; color: white; }
             </style>
         </head>
         <body class="height100perc">
@@ -47,7 +48,7 @@
                 <!-- Left half -->
                 <div class="height100perc">
                     <div>
-                        <h4>${%BuildHistory}</h4>
+                        <h4>${it.viewName}</h4>
                         <!-- VIEW_URL/api/json -->
                         <table id="jenkinsBuildHistory" class="table table-striped table-bordered ${it.tableStyle}">
                             <thead>
@@ -56,7 +57,7 @@
                                     if(showCommitInfo) {
                                         document.write("<th>${%Commits}</th>");
                                     }
-                                    if(showCommitInfo) {
+                                    if(showBuildNumber) {
                                         document.write("<th>${%Build}</th>");
                                     }
                                     if(showBuildTime) {
