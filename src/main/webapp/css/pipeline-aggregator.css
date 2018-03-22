@@ -32,11 +32,11 @@ a {
   font-size: 14px;
   background-color: transparent;
   border-radius: 3px !important;
-  margin: 1px 1px 1px 0 !important;
+  margin: 1px 1px 1px 1px !important;
 }
 
 .btn-success {
-  background-color: #2f6a2f;
+  background-color: #2fb02f;
 }
 
 .btn-danger {
