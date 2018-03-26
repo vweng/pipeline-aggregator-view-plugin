@@ -73,7 +73,7 @@ function reload_jenkins_build_history(tableSelector, viewUrl, buildHistorySize, 
                   switch (data.stages[stage].status) {
                      case 'SUCCESS':
                         classes = 'btn-success';
-                        tableClass = 'sucess'
+                        tableClass = 'success'
                         break;
                      case 'FAILED':
                         classes = 'btn-danger'
@@ -92,6 +92,8 @@ function reload_jenkins_build_history(tableSelector, viewUrl, buildHistorySize, 
                      default:
                         classes = '';
                   }
+                  
+                  if (data.status == 'FAILED') classes = 'btn-danger'; // by Vic - to match stage view, if result failed nothing green
 
                   stages += '<button type="button" class="btn ' + classes + '">' + data.stages[stage].name + '</button>';
                }
