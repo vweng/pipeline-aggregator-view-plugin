@@ -93,7 +93,7 @@ function reload_jenkins_build_history(tableSelector, viewUrl, buildHistorySize, 
                         classes = '';
                   }
                   
-                  if (data.status == 'FAILED') classes = 'btn-danger'; // by Vic - to match stage view, if result failed nothing green
+                  if (classes != '' && data.status == 'FAILED') classes = 'btn-danger'; // by Vic - to match stage view, if result failed nothing green
 
                   stages += '<button type="button" class="btn ' + classes + '">' + data.stages[stage].name + '</button>';
                }
