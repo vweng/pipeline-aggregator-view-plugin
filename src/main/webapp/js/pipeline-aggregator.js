@@ -93,8 +93,12 @@ function reload_jenkins_build_history(tableSelector, viewUrl, buildHistorySize, 
                         classes = '';
                   }
                   
-                  if (classes != '' && data.status == 'FAILED') classes = 'btn-danger'; // by Vic - to match stage view, if result failed nothing green
-
+                  if (classes != '') {
+                    // by Vic - to display different color based on overall result
+                  	if (data.status == 'FAILED') classes = 'btn-danger'; 
+					if (data.status == 'ABORTED') classes = 'btn-warning'; 
+				  }
+				  
                   stages += '<button type="button" class="btn ' + classes + '">' + data.stages[stage].name + '</button>';
                }
             }
